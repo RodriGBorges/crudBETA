@@ -144,11 +144,21 @@
     "category": "in-sale"
   },
   {
-    "name": "Samsung j7 2016",
-    "price": "25000",
-    "discount": "25",
+    "name": "core",
+    "price": "18500",
+    "discount": "1",
+    "category": "in-sale",
+    "description": "lorem",
+    "id": 17,
+    "image": "img-1632604206909.jpg"
+  },
+  {
+    "name": "El ropero de narnia",
+    "price": "20000",
+    "discount": "5",
     "category": "visited",
-    "description": "Lorem ",
-    "id": 17
+    "description": "lorem",
+    "id": 18,
+    "image": "default-image.png"
   }
 ]

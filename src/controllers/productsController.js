@@ -4,8 +4,8 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const finalPrice = (price, discount) => Math.round(price - (price * (discount/100)));
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");   //Agrega puntos a los miles
+const finalPrice = (price, discount) => Math.round(price - (price * (discount/100))); //Precio final después del descuento
 
 const controller = {
 	// Root - Show all products
@@ -29,7 +29,7 @@ const controller = {
 	store: (req, res) => {
 		const product = req.body
 		product.id = products.length + 1
-		
+		product.image = req.file ? req.file.filename : 'default-image.png'
 		products.push(product)
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
 
